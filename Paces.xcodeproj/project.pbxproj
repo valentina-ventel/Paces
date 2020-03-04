@@ -15,6 +15,8 @@
 		A72A63C0240EF3D3004C3C2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72A63BE240EF3D3004C3C2A /* LaunchScreen.storyboard */; };
 		A72A63CB240EF3D3004C3C2A /* PacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63CA240EF3D3004C3C2A /* PacesTests.swift */; };
 		A72A63D6240EF3D3004C3C2A /* PacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63D5240EF3D3004C3C2A /* PacesUITests.swift */; };
+		A72A63E6240EFBE0004C3C2A /* Accelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63E5240EFBE0004C3C2A /* Accelerometer.swift */; };
+		A72A63E8240EFC66004C3C2A /* AccelerometerModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63E7240EFC66004C3C2A /* AccelerometerModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		A72A63D1240EF3D3004C3C2A /* PacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72A63D5240EF3D3004C3C2A /* PacesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacesUITests.swift; sourceTree = "<group>"; };
 		A72A63D7240EF3D3004C3C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A72A63E5240EFBE0004C3C2A /* Accelerometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accelerometer.swift; sourceTree = "<group>"; };
+		A72A63E7240EFC66004C3C2A /* AccelerometerModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +105,8 @@
 			children = (
 				A72A63B3240EF3D0004C3C2A /* AppDelegate.swift */,
 				A72A63B5240EF3D0004C3C2A /* SceneDelegate.swift */,
-				A72A63B7240EF3D0004C3C2A /* ViewController.swift */,
+				A72A63E3240EFB77004C3C2A /* Model */,
+				A72A63E4240EFB93004C3C2A /* View */,
 				A72A63B9240EF3D0004C3C2A /* Main.storyboard */,
 				A72A63BC240EF3D3004C3C2A /* Assets.xcassets */,
 				A72A63BE240EF3D3004C3C2A /* LaunchScreen.storyboard */,
@@ -126,6 +131,25 @@
 				A72A63D7240EF3D3004C3C2A /* Info.plist */,
 			);
 			path = PacesUITests;
+			sourceTree = "<group>";
+		};
+		A72A63E3240EFB77004C3C2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A72A63E5240EFBE0004C3C2A /* Accelerometer.swift */,
+				A72A63E7240EFC66004C3C2A /* AccelerometerModelProtocol.swift */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		A72A63E4240EFB93004C3C2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A72A63B7240EF3D0004C3C2A /* ViewController.swift */,
+			);
+			name = View;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +284,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A72A63B8240EF3D0004C3C2A /* ViewController.swift in Sources */,
+				A72A63E6240EFBE0004C3C2A /* Accelerometer.swift in Sources */,
 				A72A63B4240EF3D0004C3C2A /* AppDelegate.swift in Sources */,
 				A72A63B6240EF3D0004C3C2A /* SceneDelegate.swift in Sources */,
+				A72A63E8240EFC66004C3C2A /* AccelerometerModelProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,12 +461,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G5S6577MEM;
 				INFOPLIST_FILE = Paces/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = singleview.Paces;
+				PRODUCT_BUNDLE_IDENTIFIER = CH.Paces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,12 +479,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G5S6577MEM;
 				INFOPLIST_FILE = Paces/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = singleview.Paces;
+				PRODUCT_BUNDLE_IDENTIFIER = CH.Paces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
