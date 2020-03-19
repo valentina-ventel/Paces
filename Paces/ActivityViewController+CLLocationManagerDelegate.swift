@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-extension NewRunViewController: CLLocationManagerDelegate {
+extension ActivityViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for newLocation in locations {
             let howRecent = newLocation.timestamp.timeIntervalSinceNow

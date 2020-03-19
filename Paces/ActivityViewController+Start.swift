@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-extension NewRunViewController {
+extension ActivityViewController {
     
     func start() {
         seconds = 0

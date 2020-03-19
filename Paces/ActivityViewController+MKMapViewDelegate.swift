@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-extension NewRunViewController: MKMapViewDelegate {
+extension ActivityViewController: MKMapViewDelegate {
   func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
     guard let polyline = overlay as? MKPolyline else {
       return MKOverlayRenderer(overlay: overlay)

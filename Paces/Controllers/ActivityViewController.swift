@@ -11,7 +11,7 @@ import CoreLocation
 import MapKit
 import CoreData
 
-class NewRunViewController: UIViewController {
+class ActivityViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var paceLabel: UILabel!
@@ -23,16 +23,14 @@ class NewRunViewController: UIViewController {
     var seconds = 0
     var distance = Measurement(value: 0, unit: UnitLength.meters)
     var locationList: [CLLocation] = []
-    let objectForm = ObjectForm()
     let regionMeters = 500
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let location = LocationManager(mapView: mapView, locationManager: locationManager, regionMeters: regionMeters)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //let appDelegate = UIApplication.shared.delegate as! AppDelegate
         location.checkLocationServices()
-        
-        objectForm.applyRoundCorner(stopButton)
+        stopButton.applyRoundCorner()
         start()
     }
     

@@ -16,13 +16,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     var locationManager = CLLocationManager()
     let regionMeters = 1000
-    let objectForm = ObjectForm()
-    
+   
     override func viewDidLoad() {
-        let location = LocationManager(mapView: mapView, locationManager: locationManager, regionMeters: regionMeters)
+        let location = LocationManager(mapView: mapView,
+                                       locationManager: locationManager,
+                                       regionMeters: regionMeters)
         super.viewDidLoad()
         location.checkLocationServices()
-        objectForm.applyRoundCorner(startButton)
+        startButton.applyRoundCorner()
     }
     
 }

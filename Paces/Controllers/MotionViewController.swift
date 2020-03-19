@@ -4,12 +4,11 @@
 //
 //  Created by Valentina Vențel on 03/03/2020.
 //  Copyright © 2020 Valentina Vențel. All rights reserved.
-//
 
 import UIKit
 import CoreMotion
 
-class ViewController: UIViewController {
+class MotionViewController: UIViewController {
 
     @IBOutlet weak var accelerometerXDirection: UITextField!
     @IBOutlet weak var accelerometerYDirection: UITextField!
@@ -24,8 +23,6 @@ class ViewController: UIViewController {
     private let activityManager = CMMotionActivityManager()
     private let pedometer = CMPedometer()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,7 +30,6 @@ class ViewController: UIViewController {
         //myGyro()
         //startUpdating()
     }
-
 
     func myAccelerometer() {
                 motion.accelerometerUpdateInterval = 2
@@ -116,9 +112,6 @@ class ViewController: UIViewController {
             startCountingSteps()
         }
     }
-    
-    
-    
 }
 
 extension Double {

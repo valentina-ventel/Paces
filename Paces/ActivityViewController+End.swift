@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension NewRunViewController {
+extension ActivityViewController {
     func stop() {
         stopButton.isHidden = true
         

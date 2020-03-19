@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class LocationManager {
+class LocationManager: NSObject, CLLocationManagerDelegate {
     
     var mapView: MKMapView
     var locationManager: CLLocationManager
@@ -33,13 +33,15 @@ class LocationManager {
     }
     
     func setupLocationManager() {
-        locationManager.delegate = self as? CLLocationManagerDelegate
+        locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
     func centerViewOnUserLocation() {
         if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: CLLocationDistance(regionMeters), longitudinalMeters: CLLocationDistance(regionMeters))
+            let region = MKCoordinateRegion.init(center: location,
+                                                 latitudinalMeters: CLLocationDistance(regionMeters),
+                                                 longitudinalMeters: CLLocationDistance(regionMeters))
             mapView.setRegion(region, animated: true)
         }
     }
