@@ -6,8 +6,10 @@
 //  Copyright © 2020 Valentina Vențel. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import CoreData
 
-class Run_CoreDataClass: NSObject {
+
+public class Run: NSManagedObject {
 
 }

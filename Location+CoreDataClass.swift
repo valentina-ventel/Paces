@@ -7,7 +7,8 @@
 //
 
 import UIKit
+import CoreData
 
-class Location_CoreDataClass: NSObject {
+public class Location: NSManagedObject {
 
 }

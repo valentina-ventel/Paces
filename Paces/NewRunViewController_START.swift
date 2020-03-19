@@ -28,7 +28,7 @@ extension NewRunViewController {
     
         distanceLabel.text = "\(distance)"
         timeLabel.text = "\(seconds)"
-        paceLabel.text = "Pace:  \(0)"
+        paceLabel.text = "\(0)"
     }
 
     func eachSecond() {

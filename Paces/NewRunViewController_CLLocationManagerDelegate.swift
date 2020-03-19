@@ -21,7 +21,7 @@ extension NewRunViewController: CLLocationManagerDelegate {
                 distance = distance + Measurement(value: delta, unit: UnitLength.meters)
                 let coordinates = [lastLocation.coordinate, newLocation.coordinate]
                 mapView.addOverlay(MKPolyline(coordinates: coordinates, count: 2))
-                let region = MKCoordinateRegion(center: newLocation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+                let region = MKCoordinateRegion(center: newLocation.coordinate,                                          latitudinalMeters: 500, longitudinalMeters:                              500)
                 mapView.setRegion(region, animated: true)
             }
             locationList.append(newLocation)

@@ -1,5 +1,5 @@
 //
-//  ExtensionNewRunViewController.swift
+//  ExtensioMapViewControllerLocation.swift
 //  Paces
 //
 //  Created by Valentina Vențel on 18/03/2020.
@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class ExtensionNewRunViewController: NSObject {
-
+extension MapViewController  {
+    
 }

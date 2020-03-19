@@ -9,5 +9,8 @@
 import UIKit
 
 class ObjectForm: NSObject {
-
+    func applyRoundCorner(_ object: AnyObject) {
+        object.layer.cornerRadius = object.frame.size.width / 2
+        object.layer.masksToBounds = true
+    }
 }

@@ -18,7 +18,7 @@ extension Location {
     }
 
     @NSManaged public var timeStemp: Date?
-    @NSManaged public var logitude: Double
+    @NSManaged public var longitude: Double
     @NSManaged public var latitude: Double
     @NSManaged public var run: Run?
 
