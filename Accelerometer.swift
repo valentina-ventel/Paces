@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Accelerometer: NSObject {
+struct Accelerometer {
     var x: Double
     var y: Double
     var z: Double

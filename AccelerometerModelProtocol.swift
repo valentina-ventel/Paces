@@ -10,7 +10,7 @@ import UIKit
 
 class AccelerometerModelProtocol: NSObject {
     func insertAccelerometerResults(result: Accelerometer) {
-        let urlPath = "http://172.20.10.8/AccelerometerResults.php"
+        let urlPath = "http://172.20.10.7/AccelerometerResults.php"
         
         guard let url = URL(string: urlPath) else {
             print("--------------------------Invalid URL", urlPath)
@@ -25,7 +25,7 @@ class AccelerometerModelProtocol: NSObject {
         
         let postString = "item1=\(result.x)&item2=\(result.y)&item3=\(result.z)"
         
-        //Tets
+        //Test
         print(postString)
         request.httpBody = postString.data(using: String.Encoding.utf8)
         

@@ -8,6 +8,12 @@
 
 import UIKit
 
-class Runner: NSObject {
-
+struct Runner {
+    var username: String
+    var date: Date
+    
+    init(username: String, date: Date) {
+        self.username = username
+        self.date = date
+    }
 }

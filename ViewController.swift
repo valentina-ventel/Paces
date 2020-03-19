@@ -24,12 +24,14 @@ class ViewController: UIViewController {
     private let activityManager = CMMotionActivityManager()
     private let pedometer = CMPedometer()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        myAccelerometer()
-        myGyro()
-        startUpdating()
+        //myAccelerometer()
+        //myGyro()
+        //startUpdating()
     }
 
 
@@ -51,8 +53,8 @@ class ViewController: UIViewController {
                         self.accelerometerYDirection.text = "y: \(Double(y))"
                         self.accelerometerZDirection.text = "z: \(Double(z))"
                         
-                        let acc = Accelerometer(x: 1, y: 1, z: 1)
-                        var httpRequest = AccelerometerModelProtocol()
+                        let acc = Accelerometer(x: x, y: y, z: z)
+                        let httpRequest = AccelerometerModelProtocol()
                         httpRequest.insertAccelerometerResults(result: acc)
                     }
             }
@@ -114,6 +116,8 @@ class ViewController: UIViewController {
             startCountingSteps()
         }
     }
+    
+    
     
 }
 

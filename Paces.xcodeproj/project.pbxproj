@@ -17,6 +17,9 @@
 		A72A63D6240EF3D3004C3C2A /* PacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63D5240EF3D3004C3C2A /* PacesUITests.swift */; };
 		A72A63E6240EFBE0004C3C2A /* Accelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63E5240EFBE0004C3C2A /* Accelerometer.swift */; };
 		A72A63E8240EFC66004C3C2A /* AccelerometerModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63E7240EFC66004C3C2A /* AccelerometerModelProtocol.swift */; };
+		A72A63EA24140EA8004C3C2A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63E924140EA8004C3C2A /* MapViewController.swift */; };
+		A72A63EC241540F6004C3C2A /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63EB241540F6004C3C2A /* Runner.swift */; };
+		A72A63EE24154270004C3C2A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63ED24154270004C3C2A /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		A72A63D7240EF3D3004C3C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A72A63E5240EFBE0004C3C2A /* Accelerometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accelerometer.swift; sourceTree = "<group>"; };
 		A72A63E7240EFC66004C3C2A /* AccelerometerModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerModelProtocol.swift; sourceTree = "<group>"; };
+		A72A63E924140EA8004C3C2A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A72A63EB241540F6004C3C2A /* Runner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
+		A72A63ED24154270004C3C2A /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,8 @@
 			children = (
 				A72A63E5240EFBE0004C3C2A /* Accelerometer.swift */,
 				A72A63E7240EFC66004C3C2A /* AccelerometerModelProtocol.swift */,
+				A72A63EB241540F6004C3C2A /* Runner.swift */,
+				A72A63ED24154270004C3C2A /* HTTPClient.swift */,
 			);
 			name = Model;
 			path = ..;
@@ -147,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				A72A63B7240EF3D0004C3C2A /* ViewController.swift */,
+				A72A63E924140EA8004C3C2A /* MapViewController.swift */,
 			);
 			name = View;
 			path = ..;
@@ -284,10 +293,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A72A63B8240EF3D0004C3C2A /* ViewController.swift in Sources */,
+				A72A63EA24140EA8004C3C2A /* MapViewController.swift in Sources */,
+				A72A63EE24154270004C3C2A /* HTTPClient.swift in Sources */,
 				A72A63E6240EFBE0004C3C2A /* Accelerometer.swift in Sources */,
 				A72A63B4240EF3D0004C3C2A /* AppDelegate.swift in Sources */,
 				A72A63B6240EF3D0004C3C2A /* SceneDelegate.swift in Sources */,
 				A72A63E8240EFC66004C3C2A /* AccelerometerModelProtocol.swift in Sources */,
+				A72A63EC241540F6004C3C2A /* Runner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
