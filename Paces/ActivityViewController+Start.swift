@@ -26,9 +26,9 @@ extension ActivityViewController {
 
     func updateDisplay() {
     
-        distanceLabel.text = "\(distance)"
-        timeLabel.text = "\(seconds)"
-        paceLabel.text = "\(0)"
+        distanceValueLabel.text = String(format: "%.1f", distance.value)
+        timeValueLabel.text = "\(seconds)"
+        paceValueLabel.text = "\(0)"
     }
 
     func eachSecond() {

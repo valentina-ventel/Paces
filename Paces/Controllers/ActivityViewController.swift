@@ -12,9 +12,12 @@ import MapKit
 import CoreData
 
 class ActivityViewController: UIViewController {
-    @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var paceLabel: UILabel!
+    @IBOutlet weak var distanceValueLabel: UILabel!
+    @IBOutlet weak var distanceUnitLabel: UILabel!
+    @IBOutlet weak var timeValueLabel: UILabel!
+    @IBOutlet weak var timeUnitLabel: UILabel!
+    @IBOutlet weak var paceValueLabel: UILabel!
+    @IBOutlet weak var paceUnitLabel: UILabel!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     
@@ -22,8 +25,10 @@ class ActivityViewController: UIViewController {
     var time: Timer!
     var seconds = 0
     var distance = Measurement(value: 0, unit: UnitLength.meters)
-    var locationList: [CLLocation] = []
+    var locationList = [CLLocation]()
     let regionMeters = 500
+    var value = 1
+    var date = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +37,11 @@ class ActivityViewController: UIViewController {
         location.checkLocationServices()
         stopButton.applyRoundCorner()
         start()
+        
     }
     
-    @IBAction func stopTapp(_ sender: Any) {
+    @IBAction func stopTap(_ sender: Any) {
+        value = 0
         let alertController = UIAlertController(title: "End run?", message: "Do you wish to end your run?", preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
@@ -49,7 +56,3 @@ class ActivityViewController: UIViewController {
         present(alertController, animated: true)
     }
 }
-
-
-
-

@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import MapKit
 
 extension ActivityViewController {
     func stop() {
         stopButton.isHidden = true
-        
         locationManager.stopUpdatingLocation()
     }
     
     func save() {
-    
+        let route = Route(distance: distance, time: seconds, date: date, locations: locationList)
+        
+        DBManager.saveRun(rute: route)
     }
 }
