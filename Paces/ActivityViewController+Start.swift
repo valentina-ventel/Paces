@@ -15,19 +15,24 @@ extension ActivityViewController {
     func start() {
         seconds = 0
 
-        distance = Measurement(value: 0, unit: UnitLength.meters)
+        distanceInMeters = Measurement(value: 0, unit: UnitLength.meters)
         locationList.removeAll()
         updateDisplay()
-        time = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0,
+                                    repeats: true) { _ in
             self.eachSecond()
         }
         startLocationUpdates()
     }
 
     func updateDisplay() {
+        let formatter = FormatterModel()
+        
+        distanceValueLabel.text = formatter.distanceFormatter(distanceInMeters: distanceInMeters).components(separatedBy: " ")[0]
+        distanceUnitLabel.text  = formatter.distanceFormatter(distanceInMeters: distanceInMeters).components(separatedBy: " ")[1]
+        
+        timeValueLabel.text = (formatter.durationFormatter(durationInSeconds: Measurement(value: Double(seconds), unit: UnitDuration.seconds)))
     
-        distanceValueLabel.text = String(format: "%.1f", distance.value)
-        timeValueLabel.text = "\(seconds)"
         paceValueLabel.text = "\(0)"
     }
 

@@ -11,12 +11,18 @@ import MapKit
 
 extension ActivityViewController {
     func stop() {
+        timer.invalidate()
         stopButton.isHidden = true
+        durationInSeconds = Measurement(value: Double(seconds),
+                                        unit: UnitDuration.seconds)
         locationManager.stopUpdatingLocation()
+       // mapView.fitTo(locationList, mapView)
     }
     
     func save() {
-        let route = Route(distance: distance, time: seconds, date: date, locations: locationList)
+        let route = Route(distance: distanceInMeters,
+                          duration: durationInSeconds,
+                          date: date, locations: locationList)
         
         DBManager.saveRun(rute: route)
     }

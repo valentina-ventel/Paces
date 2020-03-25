@@ -11,13 +11,17 @@ import MapKit
 
 class Route {
     var distance: Measurement<UnitLength>
-    var time: Int
+    var duration: Measurement<UnitDuration>//duration
     var date: Date
     var locations: [CLLocation]
     
-    init(distance: Measurement<UnitLength>, time: Int, date: Date, locations: [CLLocation]) {
+    init(distance: Measurement<UnitLength>,
+         duration: Measurement<UnitDuration>,
+         date: Date,
+         locations: [CLLocation])
+    {
         self.distance = distance
-        self.time = time
+        self.duration = duration
         self.date = date
         self.locations = locations
     }

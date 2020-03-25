@@ -22,9 +22,11 @@ class ActivityViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     var locationManager = CLLocationManager()
-    var time: Timer!
+    var timer: Timer!
+    var durationInSeconds = Measurement(value: 0, unit:                                                    UnitDuration.seconds)
+    var distanceInMeters = Measurement(value: 0,
+                                       unit: UnitLength.meters)
     var seconds = 0
-    var distance = Measurement(value: 0, unit: UnitLength.meters)
     var locationList = [CLLocation]()
     let regionMeters = 500
     var value = 1
@@ -32,27 +34,61 @@ class ActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let location = LocationManager(mapView: mapView, locationManager: locationManager, regionMeters: regionMeters)
-        //let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let location = LocationManager(mapView: mapView,
+                                       locationManager: locationManager,
+                                       regionMeters: regionMeters)
+    
         location.checkLocationServices()
         stopButton.applyRoundCorner()
         start()
-        
     }
     
     @IBAction func stopTap(_ sender: Any) {
-        value = 0
-        let alertController = UIAlertController(title: "End run?", message: "Do you wish to end your run?", preferredStyle: .actionSheet)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
+      // mapView.fitTo(locationList, mapView)
+        let alertController = UIAlertController(title: "End run?",
+                                                message: "Do you wish to end your run?",
+                                                preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Cancel",
+                                                style: .cancel))
+        alertController.addAction(UIAlertAction(title: "Save",
+                                                style: .default) { _ in
             self.stop()
             self.save()
-            self.performSegue(withIdentifier: "stopRunSegue", sender: nil)
+            //self.performSegue(withIdentifier: "summarySegue",
+             //                     sender: nil)
+                                                    
         })
-        alertController.addAction(UIAlertAction(title: "Discard", style: .destructive) { _ in
+        alertController.addAction(UIAlertAction(title: "Discard",
+                                                style: .destructive) { _ in
             self.stop()
             _ = self.navigationController?.popToRootViewController(animated: true)
         })
         present(alertController, animated: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is SummaryViewController {
+            let vc = segue.destination as? SummaryViewController
+            let activity = Route(distance: distanceInMeters,
+                                 duration: durationInSeconds,
+                                 date: date,
+                                 locations: locationList)
+            vc?.activity = activity
+        }
+    }
+    
+}
+
+extension UIViewController: MKMapViewDelegate {
+    public func mapView(_ mapView: MKMapView,
+               rendererFor overlay: MKOverlay) -> MKOverlayRenderer
+  {
+    guard let polyline = overlay as? MKPolyline else {
+      return MKOverlayRenderer(overlay: overlay)
+    }
+    let renderer = MKPolylineRenderer(polyline: polyline)
+    renderer.strokeColor = .red
+    renderer.lineWidth = 3
+    return renderer
+  }
 }

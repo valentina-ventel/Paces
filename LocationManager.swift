@@ -67,8 +67,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude,                                          longitude: location.coordinate.longitude)
-        let region = MKCoordinateRegion.init(center: center, latitudinalMeters:                                               CLLocationDistance(regionMeters),                                                longitudinalMeters:                                                              CLLocationDistance(regionMeters))
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: CLLocationDistance(regionMeters),                                                                                longitudinalMeters: CLLocationDistance(regionMeters))
         mapView.setRegion(region, animated: true)
     }
     

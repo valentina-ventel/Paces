@@ -9,14 +9,15 @@
 import UIKit
 import MapKit
 
-extension ActivityViewController: MKMapViewDelegate {
-  func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-    guard let polyline = overlay as? MKPolyline else {
-      return MKOverlayRenderer(overlay: overlay)
-    }
-    let renderer = MKPolylineRenderer(polyline: polyline)
-    renderer.strokeColor = .red
-    renderer.lineWidth = 3
-    return renderer
-  }
-}
+
+//extension MKMapViewDelegate {
+//  func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+//    guard let polyline = overlay as? MKPolyline else {
+//      return MKOverlayRenderer(overlay: overlay)
+//    }
+//    let renderer = MKPolylineRenderer(polyline: polyline)
+//    renderer.strokeColor = .red
+//    renderer.lineWidth = 3
+//    return renderer
+//  }
+//}

@@ -27,4 +27,11 @@ class DBManager: NSObject {
         
         return Array(runs)
     }
+    
+    static func myLastActivity() -> RLMRoute {
+        let realm = try! Realm()
+        let runs = Array(realm.objects(RLMRoute.self))
+        
+        return runs.last!
+    }
 }

@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
+import MapKit
 
 class MyActivityViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var activities = [RLMRoute]()
-    var example = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    var formatter = FormatterModel()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,14 +22,12 @@ class MyActivityViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(example.min())
-        print(example.max())
-
+        
+        title = "My activity"
         // Do any additional setup after loading the view.
         print("We have \(activities.count) in DB")
         tableView.reloadData()
     }
-    
 
     //MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,15 +36,38 @@ class MyActivityViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let route = activities[indexPath.row]
+        var historyDistance = Measurement(value: 0, unit: UnitLength.meters)
+        historyDistance.value = route.distance
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ActivityTableViewCell
-        
-        cell.distanceLabel.text = String(format: "%.1f m", route.distance)
-        cell.dateLabel.text = route.date
-        cell.durationLabel.text = "\(String(route.time))s"
+        cell.mapView.fitTo(route.locationsOfCLLocation, cell.mapView)
+        cell.distanceLabel.text = formatter.distanceFormatter(distanceInMeters: historyDistance)
+        cell.dateLabel.text = formatter.dateFormatter(date: route.date)
+        cell.durationLabel.text =          formatter.durationFormatter(durationInSeconds: Measurement(value: route.duration, unit:                                                    UnitDuration.seconds))
         
         return cell
     }
-
-    
 }
+
+extension MKMapView {
+    func fitTo(_ locations: [CLLocationCoordinate2D], _ mapView: MKMapView) {
+        var zoomRect = MKMapRect.null
+        for coordinate in locations {
+            let mapPoint = MKMapPoint.init(coordinate)
+            let pointRect = MKMapRect(x: mapPoint.x,
+                                      y: mapPoint.y,
+                                      width: 0,
+                                      height: 0)
+            if (zoomRect.isNull) {
+                zoomRect = pointRect
+            } else {
+                zoomRect = zoomRect.union(pointRect)
+            }
+        }
+
+        self.setVisibleMapRect(zoomRect, animated: true)
+        mapView.addOverlay(MKPolyline(coordinates: locations,
+                                      count: locations.count))
+    }
+}
+

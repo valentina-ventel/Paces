@@ -9,23 +9,18 @@
 import UIKit
 import RealmSwift
 import MapKit
+import CoreLocation
 
 class RLMRoute: Object {
     @objc dynamic var distance = 0.0
-    @objc dynamic var time = 0
-    @objc dynamic var date = ""
+    @objc dynamic var duration = TimeInterval()
+    @objc dynamic var date = Date()
     var locations = List<RLMLocationCoordinate>()
-    
-    var dateInOriginalForm: Date {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm E, d MMM y"
-        return formatter.date(from: date)!
-    }
     
     convenience required init(route: Route) {
         self.init()
         self.distance = route.distance.value
-        self.time = route.time
+        self.duration = route.duration.value
         let rlmLocations = List<RLMLocationCoordinate>()
         
         for location in route.locations {
@@ -34,10 +29,18 @@ class RLMRoute: Object {
         }
         
         self.locations = rlmLocations
+            
+        self.date = route.date
+    }
+    
+    var locationsOfCLLocation: [CLLocationCoordinate2D] {
+        var locationsCLLocation = [CLLocationCoordinate2D]()
         
-        let formater = DateFormatter()
-        formater.dateFormat = "HH:mm E, d MMM y"
-        
-        self.date = formater.string(from: route.date)
+        for rlmLocation in locations {
+            let location = rlmLocation.clLocationCoordinate2D
+            
+            locationsCLLocation.append(location)
+        }
+        return locationsCLLocation
     }
 }
