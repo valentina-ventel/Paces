@@ -23,7 +23,7 @@ class ActivityViewController: UIViewController {
     
     var locationManager = CLLocationManager()
     var timer: Timer!
-    var durationInSeconds = Measurement(value: 0, unit:                                                    UnitDuration.seconds)
+    var durationInSeconds = Measurement(value: 0, unit:                                      UnitDuration.seconds)
     var distanceInMeters = Measurement(value: 0,
                                        unit: UnitLength.meters)
     var seconds = 0
@@ -37,7 +37,7 @@ class ActivityViewController: UIViewController {
         let location = LocationManager(mapView: mapView,
                                        locationManager: locationManager,
                                        regionMeters: regionMeters)
-    
+       
         location.checkLocationServices()
         stopButton.applyRoundCorner()
         start()
@@ -64,17 +64,6 @@ class ActivityViewController: UIViewController {
             _ = self.navigationController?.popToRootViewController(animated: true)
         })
         present(alertController, animated: true)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is SummaryViewController {
-            let vc = segue.destination as? SummaryViewController
-            let activity = Route(distance: distanceInMeters,
-                                 duration: durationInSeconds,
-                                 date: date,
-                                 locations: locationList)
-            vc?.activity = activity
-        }
     }
     
 }

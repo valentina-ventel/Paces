@@ -15,12 +15,19 @@ class RLMRoute: Object {
     @objc dynamic var distance = 0.0
     @objc dynamic var duration = TimeInterval()
     @objc dynamic var date = Date()
+    @objc dynamic var city = ""
+    @objc dynamic var country = ""
     var locations = List<RLMLocationCoordinate>()
     
     convenience required init(route: Route) {
         self.init()
         self.distance = route.distance.value
         self.duration = route.duration.value
+        self.date = route.date
+        // adjust date with some days :D
+        // self.date = Calendar.current.date(byAdding: .day, value: -36, to: route.date)!
+        self.city = route.city
+        self.country = route.country
         let rlmLocations = List<RLMLocationCoordinate>()
         
         for location in route.locations {
@@ -29,18 +36,31 @@ class RLMRoute: Object {
         }
         
         self.locations = rlmLocations
-            
-        self.date = route.date
     }
     
-    var locationsOfCLLocation: [CLLocationCoordinate2D] {
-        var locationsCLLocation = [CLLocationCoordinate2D]()
+    fileprivate var listOfCLLocation: [CLLocation] {
+        var listOfCLLocation = [CLLocation]()
         
         for rlmLocation in locations {
-            let location = rlmLocation.clLocationCoordinate2D
+            let coord = rlmLocation.clLocationCoordinate2D
+            let location = CLLocation(latitude: coord.latitude,
+                                      longitude: coord.longitude)
             
-            locationsCLLocation.append(location)
+            listOfCLLocation.append(location)
         }
-        return locationsCLLocation
+        return listOfCLLocation
+    }
+    
+    func route() -> Route {
+        
+        let route = Route(distance: Measurement(value: self.distance,
+                                                unit: UnitLength.meters),
+                          duration: Measurement(value: self.duration,
+                                                unit: UnitDuration.seconds),
+                          date: self.date,
+                          locations: self.listOfCLLocation,
+                          city: self.city,
+                          country: self.country)
+        return route
     }
 }

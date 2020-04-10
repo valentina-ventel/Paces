@@ -23,6 +23,7 @@ extension ActivityViewController {
             self.eachSecond()
         }
         startLocationUpdates()
+        
     }
 
     func updateDisplay() {

@@ -11,63 +11,84 @@ import MapKit
 
 class MyActivityViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
-    var activities = [RLMRoute]()
-    var formatter = FormatterModel()
+    var activities = [Route]()
+    var dict = [Date:[Route]]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         activities = DBManager.myActivities()
+        
+         for activity in activities {
+            print("FROM \(activity.date)")
+            let calendar = Calendar.current
+            let year = calendar.component(.year, from: activity.date)
+            let month = calendar.component(.month, from: activity.date)
+            print("Y \(year), M \(month)")
+          
+            let dateComponents = DateComponents(calendar: calendar,
+                                                year: year,
+                                                month: month,
+                                                day: 1)
+            
+            let firstDay = calendar.date(from: dateComponents)!
+            print("  TO \(firstDay)")
+            if dict[firstDay] == nil  {
+                dict[firstDay] = [activity]
+            } else {
+                dict[firstDay]?.append(activity)
+            }
+        }
+        print(dict.keys)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "My activity"
-        // Do any additional setup after loading the view.
-        print("We have \(activities.count) in DB")
+       
         tableView.reloadData()
     }
 
     //MARK: UITableViewDataSource
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return dict.keys.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let keyDate = Array(dict.keys).sorted{$0 > $1}[section]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM YYYY"
+        let firstDayString = dateFormatter.string(from: keyDate)
+       
+        return firstDayString
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return activities.count
+        let key = Array(dict.keys).sorted{$0 > $1}[section]
+        let activitiesForSection = dict[key]
+        return activitiesForSection!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let route = activities[indexPath.row]
-        var historyDistance = Measurement(value: 0, unit: UnitLength.meters)
-        historyDistance.value = route.distance
+        let key = Array(dict.keys).sorted{$0 > $1}[indexPath.section]
+        let activitiesForSection = dict[key]
         
+        let route = activitiesForSection![indexPath.row]
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ActivityTableViewCell
-        cell.mapView.fitTo(route.locationsOfCLLocation, cell.mapView)
-        cell.distanceLabel.text = formatter.distanceFormatter(distanceInMeters: historyDistance)
-        cell.dateLabel.text = formatter.dateFormatter(date: route.date)
-        cell.durationLabel.text =          formatter.durationFormatter(durationInSeconds: Measurement(value: route.duration, unit:                                                    UnitDuration.seconds))
-        
+        cell.setup(with: route)
         return cell
     }
 }
 
-extension MKMapView {
-    func fitTo(_ locations: [CLLocationCoordinate2D], _ mapView: MKMapView) {
-        var zoomRect = MKMapRect.null
-        for coordinate in locations {
-            let mapPoint = MKMapPoint.init(coordinate)
-            let pointRect = MKMapRect(x: mapPoint.x,
-                                      y: mapPoint.y,
-                                      width: 0,
-                                      height: 0)
-            if (zoomRect.isNull) {
-                zoomRect = pointRect
-            } else {
-                zoomRect = zoomRect.union(pointRect)
-            }
-        }
-
-        self.setVisibleMapRect(zoomRect, animated: true)
-        mapView.addOverlay(MKPolyline(coordinates: locations,
-                                      count: locations.count))
-    }
+extension MyActivityViewController: UITableViewDelegate {
+    
 }
+
 

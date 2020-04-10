@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		5BDAFE01869B581CE314D3BD /* Pods_PacesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF7F3F4888BEF9A842BFF55 /* Pods_PacesTests.framework */; };
 		64114D347C47FCDEAEA55872 /* Pods_Paces_PacesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6E3304E2B7304BE0FDA35F /* Pods_Paces_PacesUITests.framework */; };
+		A7145ADD2438F0390056A292 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145ADC2438F0390056A292 /* Helpers.swift */; };
+		A7145ADF2438FBC50056A292 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145ADE2438FBC50056A292 /* MKMapView.swift */; };
+		A7145AE2243A18210056A292 /* Date+Paces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145AE1243A18210056A292 /* Date+Paces.swift */; };
+		A7145AE3243A18210056A292 /* Date+Paces.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145AE1243A18210056A292 /* Date+Paces.swift */; };
+		A7145AE4243A18E10056A292 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145ADC2438F0390056A292 /* Helpers.swift */; };
+		A7145AE6243BA1F80056A292 /* DateOfTheLastActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145AE5243BA1F80056A292 /* DateOfTheLastActivity.swift */; };
+		A7145AE7243BA1F80056A292 /* DateOfTheLastActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145AE5243BA1F80056A292 /* DateOfTheLastActivity.swift */; };
 		A72A63B4240EF3D0004C3C2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63B3240EF3D0004C3C2A /* AppDelegate.swift */; };
 		A72A63B6240EF3D0004C3C2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63B5240EF3D0004C3C2A /* SceneDelegate.swift */; };
 		A72A63B8240EF3D0004C3C2A /* MotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63B7240EF3D0004C3C2A /* MotionViewController.swift */; };
@@ -72,6 +79,10 @@
 		51E6ECE604C18BE37E99996F /* Pods-PacesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacesTests.debug.xcconfig"; path = "Target Support Files/Pods-PacesTests/Pods-PacesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5552D97824FFA527B268B220 /* Pods-Paces-PacesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paces-PacesUITests.release.xcconfig"; path = "Target Support Files/Pods-Paces-PacesUITests/Pods-Paces-PacesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6D6E3304E2B7304BE0FDA35F /* Pods_Paces_PacesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Paces_PacesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7145ADC2438F0390056A292 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		A7145ADE2438FBC50056A292 /* MKMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
+		A7145AE1243A18210056A292 /* Date+Paces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Paces.swift"; sourceTree = "<group>"; };
+		A7145AE5243BA1F80056A292 /* DateOfTheLastActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfTheLastActivity.swift; sourceTree = "<group>"; };
 		A72A63B0240EF3D0004C3C2A /* Paces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72A63B3240EF3D0004C3C2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A72A63B5240EF3D0004C3C2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +179,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A7145AE0243A17EC0056A292 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A7145ADC2438F0390056A292 /* Helpers.swift */,
+				A7145AE1243A18210056A292 /* Date+Paces.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A72A63A7240EF3D0004C3C2A = {
 			isa = PBXGroup;
 			children = (
@@ -198,8 +218,8 @@
 				A72A63B5240EF3D0004C3C2A /* SceneDelegate.swift */,
 				A72A6458241B8F9C004C3C2A /* Core Data */,
 				A72A63E3240EFB77004C3C2A /* Models */,
-				A72A63E4240EFB93004C3C2A /* Views */,
 				A74549782423E7EC00A104F8 /* Controllers */,
+				A7145AE0243A17EC0056A292 /* Helpers */,
 				A72A63BC240EF3D3004C3C2A /* Assets.xcassets */,
 				A72A63C1240EF3D3004C3C2A /* Info.plist */,
 			);
@@ -236,6 +256,7 @@
 				A74549872426BB5000A104F8 /* Route.swift */,
 				A7454995242A2EB800A104F8 /* FormatterModel.swift */,
 				A745498D2426BEAD00A104F8 /* Realm Models */,
+				A72A63E4240EFB93004C3C2A /* Views */,
 			);
 			name = Models;
 			path = ..;
@@ -249,7 +270,6 @@
 				A745498E2427D87700A104F8 /* ActivityTableViewCell.swift */,
 			);
 			name = Views;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		A72A6453241B8D6D004C3C2A /* Extensions */ = {
@@ -259,6 +279,7 @@
 				A72A645D24223178004C3C2A /* ActivityViewController+End.swift */,
 				A745496E242288A100A104F8 /* ActivityViewController+CLLocationManagerDelegate.swift */,
 				A7454970242289FD00A104F8 /* ActivityViewController+MKMapViewDelegate.swift */,
+				A7145ADE2438FBC50056A292 /* MKMapView.swift */,
 			);
 			name = Extensions;
 			path = ..;
@@ -296,6 +317,7 @@
 			children = (
 				A745497924251CF100A104F8 /* RLMLocationCoordinate.swift */,
 				A745497B24251EF200A104F8 /* RLMRoute.swift */,
+				A7145AE5243BA1F80056A292 /* DateOfTheLastActivity.swift */,
 				A745497F24266C4600A104F8 /* DBManager.swift */,
 			);
 			path = "Realm Models";
@@ -540,6 +562,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7145AE2243A18210056A292 /* Date+Paces.swift in Sources */,
 				A74549772423942D00A104F8 /* UIButton+Paces.swift in Sources */,
 				A745496F242288A100A104F8 /* ActivityViewController+CLLocationManagerDelegate.swift in Sources */,
 				A72A6452241AAFA8004C3C2A /* Location+CoreDataClass.swift in Sources */,
@@ -559,6 +582,7 @@
 				A72A63B4240EF3D0004C3C2A /* AppDelegate.swift in Sources */,
 				A72A645C24223165004C3C2A /* ActivityViewController+Start.swift in Sources */,
 				A74549752423897100A104F8 /* LocationManager.swift in Sources */,
+				A7145ADF2438FBC50056A292 /* MKMapView.swift in Sources */,
 				A72A6450241AAF47004C3C2A /* Run+CoreDataClass.swift in Sources */,
 				A745498F2427D87700A104F8 /* ActivityTableViewCell.swift in Sources */,
 				A74549882426BB5000A104F8 /* Route.swift in Sources */,
@@ -566,9 +590,11 @@
 				A72A645A241B9008004C3C2A /* CoreDataStack.swift in Sources */,
 				A72A645E24223178004C3C2A /* ActivityViewController+End.swift in Sources */,
 				A72A644E241AAEDC004C3C2A /* Location+CoreDataProperties.swift in Sources */,
+				A7145AE6243BA1F80056A292 /* DateOfTheLastActivity.swift in Sources */,
 				A72A63E8240EFC66004C3C2A /* AccelerometerModelProtocol.swift in Sources */,
 				A72A63EC241540F6004C3C2A /* Runner.swift in Sources */,
 				A72A6430241664B7004C3C2A /* Paces.xcdatamodeld in Sources */,
+				A7145ADD2438F0390056A292 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,8 +602,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7145AE3243A18210056A292 /* Date+Paces.swift in Sources */,
+				A7145AE7243BA1F80056A292 /* DateOfTheLastActivity.swift in Sources */,
 				A72A63CB240EF3D3004C3C2A /* PacesTests.swift in Sources */,
 				A745498324267E2000A104F8 /* MyActivityViewController.swift in Sources */,
+				A7145AE4243A18E10056A292 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

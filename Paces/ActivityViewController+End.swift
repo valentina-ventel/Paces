@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 
+typealias tupleVar = (String, String)
+
 extension ActivityViewController {
     func stop() {
         timer.invalidate()
@@ -17,13 +19,32 @@ extension ActivityViewController {
                                         unit: UnitDuration.seconds)
         locationManager.stopUpdatingLocation()
        // mapView.fitTo(locationList, mapView)
+        
     }
     
     func save() {
-        let route = Route(distance: distanceInMeters,
-                          duration: durationInSeconds,
-                          date: date, locations: locationList)
+        let saving = {(placemarks: [CLPlacemark]?, error: Error?) -> Void in
+            guard let placemarks = placemarks else {
+                print("Problem with the data received from geocoder")
+                return
+            }
+            let placemark = placemarks[0]
+            let locality = placemark.locality!
+            let country = placemark.country!
+            print("It was a great activity in \(locality), \(flag(twoDigitCountryCode(for: country)))")
+            let route = Route(distance: self.distanceInMeters,
+                              duration: self.durationInSeconds,
+                              date: self.date,
+                              locations: self.locationList,
+                              city: locality,
+                              country: country)
+                    
+            DBManager.saveRun(rute: route)
+            DBManager.saveDateOfTheActivity(date: self.date)
+        }
         
-        DBManager.saveRun(rute: route)
+        CLGeocoder().reverseGeocodeLocation(self.locationList.first!,
+                                            completionHandler: saving)
+    
     }
 }

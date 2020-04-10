@@ -11,6 +11,14 @@ import MapKit
 import CoreLocation
 
 extension ActivityViewController: CLLocationManagerDelegate {
+//    func getCityAndCountry(from location: CLLocation, completion: @escaping(_ city: String?, _ country: String?, _ error: Error?) -> ()) {
+//        CLGeocoder().reverseGeocodeLocation(location) { placemark, error in
+//            completion(placemark?.first?.locality,
+//                       placemark?.first?.country,
+//                       error)
+//        }
+//    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for newLocation in locations {
             let howRecent = newLocation.timestamp.timeIntervalSinceNow

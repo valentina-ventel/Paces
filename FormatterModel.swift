@@ -31,4 +31,11 @@ class FormatterModel: NSObject {
         
         return formatter.string(from: date)
     }
+    
+    func dateFormatterForTableView(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        
+        return formatter.string(from: date)
+    }
 }
