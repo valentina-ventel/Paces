@@ -11,7 +11,7 @@ import CoreLocation
 import MapKit
 import CoreData
 
-class ActivityViewController: UIViewController {
+class ActivityViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var distanceValueLabel: UILabel!
     @IBOutlet weak var distanceUnitLabel: UILabel!
     @IBOutlet weak var timeValueLabel: UILabel!
@@ -20,6 +20,8 @@ class ActivityViewController: UIViewController {
     @IBOutlet weak var paceUnitLabel: UILabel!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var startButton: UIButton!
     
     var locationManager = CLLocationManager()
     var timer: Timer!
@@ -34,17 +36,26 @@ class ActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //startBabBarItem.
         let location = LocationManager(mapView: mapView,
                                        locationManager: locationManager,
                                        regionMeters: regionMeters)
        
         location.checkLocationServices()
         stopButton.applyRoundCorner()
+    }
+    
+    @IBAction func startTap() {
+        closeButton.isHidden = true
+        stopButton.isHidden = false
+        startButton.isHidden = true
         start()
     }
     
     @IBAction func stopTap(_ sender: Any) {
       // mapView.fitTo(locationList, mapView)
+        
         let alertController = UIAlertController(title: "End run?",
                                                 message: "Do you wish to end your run?",
                                                 preferredStyle: .actionSheet)
@@ -54,16 +65,17 @@ class ActivityViewController: UIViewController {
                                                 style: .default) { _ in
             self.stop()
             self.save()
-            //self.performSegue(withIdentifier: "summarySegue",
-             //                     sender: nil)
                                                     
         })
         alertController.addAction(UIAlertAction(title: "Discard",
                                                 style: .destructive) { _ in
             self.stop()
-            _ = self.navigationController?.popToRootViewController(animated: true)
+//        _ = self.navigationController?.popToViewController(secondVC, animated: true)
         })
         present(alertController, animated: true)
+    }
+    @IBAction func outButtonAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

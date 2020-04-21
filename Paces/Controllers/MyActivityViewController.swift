@@ -14,8 +14,8 @@ class MyActivityViewController: UIViewController, UITableViewDataSource {
     var activities = [Route]()
     var dict = [Date:[Route]]()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         activities = DBManager.myActivities()
         
@@ -40,13 +40,6 @@ class MyActivityViewController: UIViewController, UITableViewDataSource {
             }
         }
         print(dict.keys)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        title = "My activity"
-       
         tableView.reloadData()
     }
 
@@ -85,10 +78,6 @@ class MyActivityViewController: UIViewController, UITableViewDataSource {
         cell.setup(with: route)
         return cell
     }
-}
-
-extension MyActivityViewController: UITableViewDelegate {
-    
 }
 
 

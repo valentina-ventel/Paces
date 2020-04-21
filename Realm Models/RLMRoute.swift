@@ -61,6 +61,6 @@ class RLMRoute: Object {
                           locations: self.listOfCLLocation,
                           city: self.city,
                           country: self.country)
-        return route
+            return route
     }
 }

@@ -12,7 +12,7 @@ import RealmSwift
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
 
     var window: UIWindow?
 
@@ -86,6 +86,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         UIApplication.shared.applicationIconBadgeNumber = 0
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController is ActivityViewController {
+            if let newVC = tabBarController.storyboard?.instantiateViewController(withIdentifier: "Activity") {
+                newVC.modalPresentationStyle = .fullScreen
+                //newVC.modalTransitionStyle = .crossDissolve
+                tabBarController.present(newVC, animated: true)
+                return false
+            }
+        }
+
+        return true
     }
 }
 

@@ -45,7 +45,7 @@ class DBManager: NSObject {
         return routes.sorted(by: {$0.date > $1.date})
     }
     
-    static func dateLastRun() -> Date {
+    static func dateLastRun() -> Date? {
         let realm = try! Realm()
         let rlmDates = Array(realm.objects(RLMDateOfTheLastActivity.self))
         
@@ -55,6 +55,6 @@ class DBManager: NSObject {
             dates.append(rlmDate.date)
         }
         
-        return dates.last!
+        return dates.last
     }
 }

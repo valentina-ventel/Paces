@@ -13,12 +13,11 @@ import UserNotifications
 
 class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var startButton: UIButton!
-    
+   // @IBOutlet weak var startButton: UIButton!
     var locationManager = CLLocationManager()
     let regionMeters = 1000
     let userNotificationCenter = UNUserNotificationCenter.current()
-    var currengtDate = Date()
+    var currentDate = Date()
     
     override func viewDidLoad() {
         let location = LocationManager(mapView: mapView,
@@ -27,15 +26,20 @@ class MapViewController: UIViewController {
                                        regionMeters: regionMeters)
         super.viewDidLoad()
         location.checkLocationServices()
-        startButton.applyRoundCorner()
+        //startButton.applyRoundCorner()
         self.requestNotoficationAuthorization()
         self.userNotificationCenter.delegate = self
         
-        let dateOfTheLastRun = FormatterModel().dateFormatterForTableView(date:DBManager.dateLastRun())
-        let currentDateOfString = FormatterModel().dateFormatterForTableView(date: currengtDate)
+        guard let lastRunDate = DBManager.dateLastRun() else {
+            print("There are no activities in DB yet")
+            return
+        }
+        let dateOfTheLastRun = FormatterModel().dateFormatterForTableView(date:lastRunDate)
+        let currentDateOfString = FormatterModel().dateFormatterForTableView(date: currentDate)
+        
         
         print("----------------------")
-        print("Last day where the user running: \(dateOfTheLastRun)")
+        print("Last day when the user ran: \(dateOfTheLastRun)")
         if dateOfTheLastRun != currentDateOfString {
             self.sendNotification()
         }

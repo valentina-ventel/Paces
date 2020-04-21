@@ -16,6 +16,10 @@
 		A7145AE4243A18E10056A292 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145ADC2438F0390056A292 /* Helpers.swift */; };
 		A7145AE6243BA1F80056A292 /* DateOfTheLastActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145AE5243BA1F80056A292 /* DateOfTheLastActivity.swift */; };
 		A7145AE7243BA1F80056A292 /* DateOfTheLastActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145AE5243BA1F80056A292 /* DateOfTheLastActivity.swift */; };
+		A7145B0A244200820056A292 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145B09244200820056A292 /* TabBarController.swift */; };
+		A7145B0B244200820056A292 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145B09244200820056A292 /* TabBarController.swift */; };
+		A7145B0D244200D90056A292 /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145B0C244200D90056A292 /* MyTabBar.swift */; };
+		A7145B0E244200D90056A292 /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145B0C244200D90056A292 /* MyTabBar.swift */; };
 		A72A63B4240EF3D0004C3C2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63B3240EF3D0004C3C2A /* AppDelegate.swift */; };
 		A72A63B6240EF3D0004C3C2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63B5240EF3D0004C3C2A /* SceneDelegate.swift */; };
 		A72A63B8240EF3D0004C3C2A /* MotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63B7240EF3D0004C3C2A /* MotionViewController.swift */; };
@@ -51,6 +55,7 @@
 		A745498F2427D87700A104F8 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745498E2427D87700A104F8 /* ActivityTableViewCell.swift */; };
 		A7454996242A2EB800A104F8 /* FormatterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7454995242A2EB800A104F8 /* FormatterModel.swift */; };
 		A7454998242B823F00A104F8 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7454997242B823F00A104F8 /* SummaryViewController.swift */; };
+		A79A5C9C244C46F3006839E5 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A5C9B244C46F3006839E5 /* ModalViewController.swift */; };
 		E908DBC32291D7DEB05F57A2 /* Pods_Paces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE97B3AFBBFF0ED6F7CD258 /* Pods_Paces.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +88,8 @@
 		A7145ADE2438FBC50056A292 /* MKMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
 		A7145AE1243A18210056A292 /* Date+Paces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Paces.swift"; sourceTree = "<group>"; };
 		A7145AE5243BA1F80056A292 /* DateOfTheLastActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfTheLastActivity.swift; sourceTree = "<group>"; };
+		A7145B09244200820056A292 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A7145B0C244200D90056A292 /* MyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
 		A72A63B0240EF3D0004C3C2A /* Paces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72A63B3240EF3D0004C3C2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A72A63B5240EF3D0004C3C2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +131,7 @@
 		A745498E2427D87700A104F8 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		A7454995242A2EB800A104F8 /* FormatterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterModel.swift; sourceTree = "<group>"; };
 		A7454997242B823F00A104F8 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		A79A5C9B244C46F3006839E5 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		C144E6D2B3D91D20C1B0B691 /* Pods-Paces-PacesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paces-PacesUITests.debug.xcconfig"; path = "Target Support Files/Pods-Paces-PacesUITests/Pods-Paces-PacesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FFF7F3F4888BEF9A842BFF55 /* Pods_PacesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PacesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -255,6 +263,7 @@
 				A74549762423942D00A104F8 /* UIButton+Paces.swift */,
 				A74549872426BB5000A104F8 /* Route.swift */,
 				A7454995242A2EB800A104F8 /* FormatterModel.swift */,
+				A745498E2427D87700A104F8 /* ActivityTableViewCell.swift */,
 				A745498D2426BEAD00A104F8 /* Realm Models */,
 				A72A63E4240EFB93004C3C2A /* Views */,
 			);
@@ -267,7 +276,6 @@
 			children = (
 				A72A63B9240EF3D0004C3C2A /* Main.storyboard */,
 				A72A63BE240EF3D3004C3C2A /* LaunchScreen.storyboard */,
-				A745498E2427D87700A104F8 /* ActivityTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -307,7 +315,9 @@
 				A72A64392416A281004C3C2A /* ActivityViewController.swift */,
 				A72A63B7240EF3D0004C3C2A /* MotionViewController.swift */,
 				A7454997242B823F00A104F8 /* SummaryViewController.swift */,
+				A7145B09244200820056A292 /* TabBarController.swift */,
 				A72A6453241B8D6D004C3C2A /* Extensions */,
+				A79A5C9B244C46F3006839E5 /* ModalViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,6 +329,7 @@
 				A745497B24251EF200A104F8 /* RLMRoute.swift */,
 				A7145AE5243BA1F80056A292 /* DateOfTheLastActivity.swift */,
 				A745497F24266C4600A104F8 /* DBManager.swift */,
+				A7145B0C244200D90056A292 /* MyTabBar.swift */,
 			);
 			path = "Realm Models";
 			sourceTree = "<group>";
@@ -565,6 +576,7 @@
 				A7145AE2243A18210056A292 /* Date+Paces.swift in Sources */,
 				A74549772423942D00A104F8 /* UIButton+Paces.swift in Sources */,
 				A745496F242288A100A104F8 /* ActivityViewController+CLLocationManagerDelegate.swift in Sources */,
+				A7145B0D244200D90056A292 /* MyTabBar.swift in Sources */,
 				A72A6452241AAFA8004C3C2A /* Location+CoreDataClass.swift in Sources */,
 				A7454971242289FD00A104F8 /* ActivityViewController+MKMapViewDelegate.swift in Sources */,
 				A745497A24251CF100A104F8 /* RLMLocationCoordinate.swift in Sources */,
@@ -577,6 +589,7 @@
 				A72A63EA24140EA8004C3C2A /* MapViewController.swift in Sources */,
 				A72A63EE24154270004C3C2A /* HTTPClient.swift in Sources */,
 				A745497C24251EF200A104F8 /* RLMRoute.swift in Sources */,
+				A79A5C9C244C46F3006839E5 /* ModalViewController.swift in Sources */,
 				A72A63E6240EFBE0004C3C2A /* Accelerometer.swift in Sources */,
 				A72A643A2416A281004C3C2A /* ActivityViewController.swift in Sources */,
 				A72A63B4240EF3D0004C3C2A /* AppDelegate.swift in Sources */,
@@ -585,6 +598,7 @@
 				A7145ADF2438FBC50056A292 /* MKMapView.swift in Sources */,
 				A72A6450241AAF47004C3C2A /* Run+CoreDataClass.swift in Sources */,
 				A745498F2427D87700A104F8 /* ActivityTableViewCell.swift in Sources */,
+				A7145B0A244200820056A292 /* TabBarController.swift in Sources */,
 				A74549882426BB5000A104F8 /* Route.swift in Sources */,
 				A72A63B6240EF3D0004C3C2A /* SceneDelegate.swift in Sources */,
 				A72A645A241B9008004C3C2A /* CoreDataStack.swift in Sources */,
@@ -605,6 +619,8 @@
 				A7145AE3243A18210056A292 /* Date+Paces.swift in Sources */,
 				A7145AE7243BA1F80056A292 /* DateOfTheLastActivity.swift in Sources */,
 				A72A63CB240EF3D3004C3C2A /* PacesTests.swift in Sources */,
+				A7145B0E244200D90056A292 /* MyTabBar.swift in Sources */,
+				A7145B0B244200820056A292 /* TabBarController.swift in Sources */,
 				A745498324267E2000A104F8 /* MyActivityViewController.swift in Sources */,
 				A7145AE4243A18E10056A292 /* Helpers.swift in Sources */,
 			);

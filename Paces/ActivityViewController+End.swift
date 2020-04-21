@@ -14,7 +14,9 @@ typealias tupleVar = (String, String)
 extension ActivityViewController {
     func stop() {
         timer.invalidate()
+        startButton.isHidden = false
         stopButton.isHidden = true
+        closeButton.isHidden = false
         durationInSeconds = Measurement(value: Double(seconds),
                                         unit: UnitDuration.seconds)
         locationManager.stopUpdatingLocation()
