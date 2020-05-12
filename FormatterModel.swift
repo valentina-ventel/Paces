@@ -38,4 +38,11 @@ class FormatterModel: NSObject {
         
         return formatter.string(from: date)
     }
+    
+    func dateFormatterStringToDate(dateString: String) -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm E, d MMM y"
+        
+        return formatter.date(from: dateString)!
+    }
 }

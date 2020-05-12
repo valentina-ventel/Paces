@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 import UserNotifications
+import FirebaseAuth
 
 class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
@@ -20,6 +21,19 @@ class MapViewController: UIViewController {
     var currentDate = Date()
     
     override func viewDidLoad() {
+        if let curentUser = Auth.auth().currentUser {
+            print("----------------------------------")
+            print(curentUser.displayName)
+            print(curentUser.email)
+            print(curentUser.phoneNumber)
+            print(curentUser.uid)
+        }
+//        do {
+//            try Auth.auth().signOut()
+//        } catch {
+//            print("Errors!")
+//        }
+//
         let location = LocationManager(mapView: mapView,
                    
                                        locationManager: locationManager,

@@ -34,6 +34,8 @@ class ActivityTableViewCell: UITableViewCell {
         dateLabel.text = formatter.dateFormatter(date: route.date)
         durationLabel.text = "\(formatter.durationFormatter(durationInSeconds: route.duration))"
         locationLabel.text = route.city + " " + flag(twoDigitCountryCode(for: route.country))
+        print("-------------------------------")
+        print(route.country)
     }
 
 }

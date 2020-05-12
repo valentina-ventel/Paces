@@ -35,11 +35,6 @@
 		A72A63EE24154270004C3C2A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63ED24154270004C3C2A /* HTTPClient.swift */; };
 		A72A6430241664B7004C3C2A /* Paces.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A72A642E241664B7004C3C2A /* Paces.xcdatamodeld */; };
 		A72A643A2416A281004C3C2A /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A64392416A281004C3C2A /* ActivityViewController.swift */; };
-		A72A644D241AAEDC004C3C2A /* Run+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A644B241AAEDC004C3C2A /* Run+CoreDataProperties.swift */; };
-		A72A644E241AAEDC004C3C2A /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A644C241AAEDC004C3C2A /* Location+CoreDataProperties.swift */; };
-		A72A6450241AAF47004C3C2A /* Run+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A644F241AAF47004C3C2A /* Run+CoreDataClass.swift */; };
-		A72A6452241AAFA8004C3C2A /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A6451241AAFA8004C3C2A /* Location+CoreDataClass.swift */; };
-		A72A645A241B9008004C3C2A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A6459241B9008004C3C2A /* CoreDataStack.swift */; };
 		A72A645C24223165004C3C2A /* ActivityViewController+Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A645B24223165004C3C2A /* ActivityViewController+Start.swift */; };
 		A72A645E24223178004C3C2A /* ActivityViewController+End.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A645D24223178004C3C2A /* ActivityViewController+End.swift */; };
 		A745496F242288A100A104F8 /* ActivityViewController+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745496E242288A100A104F8 /* ActivityViewController+CLLocationManagerDelegate.swift */; };
@@ -55,7 +50,14 @@
 		A745498F2427D87700A104F8 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745498E2427D87700A104F8 /* ActivityTableViewCell.swift */; };
 		A7454996242A2EB800A104F8 /* FormatterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7454995242A2EB800A104F8 /* FormatterModel.swift */; };
 		A7454998242B823F00A104F8 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7454997242B823F00A104F8 /* SummaryViewController.swift */; };
-		A79A5C9C244C46F3006839E5 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A5C9B244C46F3006839E5 /* ModalViewController.swift */; };
+		A74A54952451D24200910458 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A54942451D24200910458 /* ProfileTableViewCell.swift */; };
+		A74A549F2454AE2A00910458 /* ClasamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A549E2454AE2A00910458 /* ClasamentTableViewCell.swift */; };
+		A74A54A124584E0B00910458 /* RLMRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A54A024584E0B00910458 /* RLMRunner.swift */; };
+		A74A54A3245CBDDD00910458 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A54A2245CBDDC00910458 /* LoginViewController.swift */; };
+		A74A54A5245CD0AC00910458 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A74A54A4245CD0AC00910458 /* GoogleService-Info.plist */; };
+		A74A54A7245D041200910458 /* UploadinActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A54A6245D041200910458 /* UploadinActivitiesViewController.swift */; };
+		A74A54A92464143A00910458 /* UploadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A54A82464143A00910458 /* UploadingTableViewCell.swift */; };
+		A79A5C9C244C46F3006839E5 /* ClasamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A5C9B244C46F3006839E5 /* ClasamentViewController.swift */; };
 		E908DBC32291D7DEB05F57A2 /* Pods_Paces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE97B3AFBBFF0ED6F7CD258 /* Pods_Paces.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,11 +113,6 @@
 		A72A63ED24154270004C3C2A /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		A72A642F241664B7004C3C2A /* Paces.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Paces.xcdatamodel; sourceTree = "<group>"; };
 		A72A64392416A281004C3C2A /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
-		A72A644B241AAEDC004C3C2A /* Run+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A72A644C241AAEDC004C3C2A /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A72A644F241AAF47004C3C2A /* Run+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A72A6451241AAFA8004C3C2A /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A72A6459241B9008004C3C2A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		A72A645B24223165004C3C2A /* ActivityViewController+Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityViewController+Start.swift"; sourceTree = "<group>"; };
 		A72A645D24223178004C3C2A /* ActivityViewController+End.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityViewController+End.swift"; sourceTree = "<group>"; };
 		A745496E242288A100A104F8 /* ActivityViewController+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityViewController+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
@@ -131,7 +128,14 @@
 		A745498E2427D87700A104F8 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		A7454995242A2EB800A104F8 /* FormatterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterModel.swift; sourceTree = "<group>"; };
 		A7454997242B823F00A104F8 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
-		A79A5C9B244C46F3006839E5 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		A74A54942451D24200910458 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		A74A549E2454AE2A00910458 /* ClasamentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasamentTableViewCell.swift; sourceTree = "<group>"; };
+		A74A54A024584E0B00910458 /* RLMRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLMRunner.swift; sourceTree = "<group>"; };
+		A74A54A2245CBDDC00910458 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A74A54A4245CD0AC00910458 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A74A54A6245D041200910458 /* UploadinActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadinActivitiesViewController.swift; sourceTree = "<group>"; };
+		A74A54A82464143A00910458 /* UploadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingTableViewCell.swift; sourceTree = "<group>"; };
+		A79A5C9B244C46F3006839E5 /* ClasamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasamentViewController.swift; sourceTree = "<group>"; };
 		C144E6D2B3D91D20C1B0B691 /* Pods-Paces-PacesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paces-PacesUITests.debug.xcconfig"; path = "Target Support Files/Pods-Paces-PacesUITests/Pods-Paces-PacesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FFF7F3F4888BEF9A842BFF55 /* Pods_PacesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PacesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -224,12 +228,13 @@
 			children = (
 				A72A63B3240EF3D0004C3C2A /* AppDelegate.swift */,
 				A72A63B5240EF3D0004C3C2A /* SceneDelegate.swift */,
-				A72A6458241B8F9C004C3C2A /* Core Data */,
+				A72A642E241664B7004C3C2A /* Paces.xcdatamodeld */,
 				A72A63E3240EFB77004C3C2A /* Models */,
 				A74549782423E7EC00A104F8 /* Controllers */,
 				A7145AE0243A17EC0056A292 /* Helpers */,
 				A72A63BC240EF3D3004C3C2A /* Assets.xcassets */,
 				A72A63C1240EF3D3004C3C2A /* Info.plist */,
+				A74A54A4245CD0AC00910458 /* GoogleService-Info.plist */,
 			);
 			path = Paces;
 			sourceTree = "<group>";
@@ -257,13 +262,16 @@
 			children = (
 				A72A63E5240EFBE0004C3C2A /* Accelerometer.swift */,
 				A72A63E7240EFC66004C3C2A /* AccelerometerModelProtocol.swift */,
-				A72A63EB241540F6004C3C2A /* Runner.swift */,
 				A72A63ED24154270004C3C2A /* HTTPClient.swift */,
 				A74549742423897100A104F8 /* LocationManager.swift */,
 				A74549762423942D00A104F8 /* UIButton+Paces.swift */,
 				A74549872426BB5000A104F8 /* Route.swift */,
+				A72A63EB241540F6004C3C2A /* Runner.swift */,
 				A7454995242A2EB800A104F8 /* FormatterModel.swift */,
 				A745498E2427D87700A104F8 /* ActivityTableViewCell.swift */,
+				A74A54942451D24200910458 /* ProfileTableViewCell.swift */,
+				A74A549E2454AE2A00910458 /* ClasamentTableViewCell.swift */,
+				A74A54A82464143A00910458 /* UploadingTableViewCell.swift */,
 				A745498D2426BEAD00A104F8 /* Realm Models */,
 				A72A63E4240EFB93004C3C2A /* Views */,
 			);
@@ -293,20 +301,6 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		A72A6458241B8F9C004C3C2A /* Core Data */ = {
-			isa = PBXGroup;
-			children = (
-				A72A644F241AAF47004C3C2A /* Run+CoreDataClass.swift */,
-				A72A644B241AAEDC004C3C2A /* Run+CoreDataProperties.swift */,
-				A72A6451241AAFA8004C3C2A /* Location+CoreDataClass.swift */,
-				A72A644C241AAEDC004C3C2A /* Location+CoreDataProperties.swift */,
-				A72A642E241664B7004C3C2A /* Paces.xcdatamodeld */,
-				A72A6459241B9008004C3C2A /* CoreDataStack.swift */,
-			);
-			name = "Core Data";
-			path = ..;
-			sourceTree = "<group>";
-		};
 		A74549782423E7EC00A104F8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,7 +311,9 @@
 				A7454997242B823F00A104F8 /* SummaryViewController.swift */,
 				A7145B09244200820056A292 /* TabBarController.swift */,
 				A72A6453241B8D6D004C3C2A /* Extensions */,
-				A79A5C9B244C46F3006839E5 /* ModalViewController.swift */,
+				A79A5C9B244C46F3006839E5 /* ClasamentViewController.swift */,
+				A74A54A2245CBDDC00910458 /* LoginViewController.swift */,
+				A74A54A6245D041200910458 /* UploadinActivitiesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -330,6 +326,7 @@
 				A7145AE5243BA1F80056A292 /* DateOfTheLastActivity.swift */,
 				A745497F24266C4600A104F8 /* DBManager.swift */,
 				A7145B0C244200D90056A292 /* MyTabBar.swift */,
+				A74A54A024584E0B00910458 /* RLMRunner.swift */,
 			);
 			path = "Realm Models";
 			sourceTree = "<group>";
@@ -444,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A72A63C0240EF3D3004C3C2A /* LaunchScreen.storyboard in Resources */,
+				A74A54A5245CD0AC00910458 /* GoogleService-Info.plist in Resources */,
 				A72A63BD240EF3D3004C3C2A /* Assets.xcassets in Resources */,
 				A72A63BB240EF3D0004C3C2A /* Main.storyboard in Resources */,
 			);
@@ -577,33 +575,34 @@
 				A74549772423942D00A104F8 /* UIButton+Paces.swift in Sources */,
 				A745496F242288A100A104F8 /* ActivityViewController+CLLocationManagerDelegate.swift in Sources */,
 				A7145B0D244200D90056A292 /* MyTabBar.swift in Sources */,
-				A72A6452241AAFA8004C3C2A /* Location+CoreDataClass.swift in Sources */,
 				A7454971242289FD00A104F8 /* ActivityViewController+MKMapViewDelegate.swift in Sources */,
 				A745497A24251CF100A104F8 /* RLMLocationCoordinate.swift in Sources */,
 				A745498224267E2000A104F8 /* MyActivityViewController.swift in Sources */,
 				A745498024266C4600A104F8 /* DBManager.swift in Sources */,
 				A7454998242B823F00A104F8 /* SummaryViewController.swift in Sources */,
 				A72A63B8240EF3D0004C3C2A /* MotionViewController.swift in Sources */,
+				A74A54952451D24200910458 /* ProfileTableViewCell.swift in Sources */,
+				A74A549F2454AE2A00910458 /* ClasamentTableViewCell.swift in Sources */,
 				A7454996242A2EB800A104F8 /* FormatterModel.swift in Sources */,
-				A72A644D241AAEDC004C3C2A /* Run+CoreDataProperties.swift in Sources */,
 				A72A63EA24140EA8004C3C2A /* MapViewController.swift in Sources */,
 				A72A63EE24154270004C3C2A /* HTTPClient.swift in Sources */,
 				A745497C24251EF200A104F8 /* RLMRoute.swift in Sources */,
-				A79A5C9C244C46F3006839E5 /* ModalViewController.swift in Sources */,
+				A79A5C9C244C46F3006839E5 /* ClasamentViewController.swift in Sources */,
 				A72A63E6240EFBE0004C3C2A /* Accelerometer.swift in Sources */,
 				A72A643A2416A281004C3C2A /* ActivityViewController.swift in Sources */,
 				A72A63B4240EF3D0004C3C2A /* AppDelegate.swift in Sources */,
+				A74A54A92464143A00910458 /* UploadingTableViewCell.swift in Sources */,
 				A72A645C24223165004C3C2A /* ActivityViewController+Start.swift in Sources */,
+				A74A54A124584E0B00910458 /* RLMRunner.swift in Sources */,
 				A74549752423897100A104F8 /* LocationManager.swift in Sources */,
 				A7145ADF2438FBC50056A292 /* MKMapView.swift in Sources */,
-				A72A6450241AAF47004C3C2A /* Run+CoreDataClass.swift in Sources */,
 				A745498F2427D87700A104F8 /* ActivityTableViewCell.swift in Sources */,
+				A74A54A3245CBDDD00910458 /* LoginViewController.swift in Sources */,
+				A74A54A7245D041200910458 /* UploadinActivitiesViewController.swift in Sources */,
 				A7145B0A244200820056A292 /* TabBarController.swift in Sources */,
 				A74549882426BB5000A104F8 /* Route.swift in Sources */,
 				A72A63B6240EF3D0004C3C2A /* SceneDelegate.swift in Sources */,
-				A72A645A241B9008004C3C2A /* CoreDataStack.swift in Sources */,
 				A72A645E24223178004C3C2A /* ActivityViewController+End.swift in Sources */,
-				A72A644E241AAEDC004C3C2A /* Location+CoreDataProperties.swift in Sources */,
 				A7145AE6243BA1F80056A292 /* DateOfTheLastActivity.swift in Sources */,
 				A72A63E8240EFC66004C3C2A /* AccelerometerModelProtocol.swift in Sources */,
 				A72A63EC241540F6004C3C2A /* Runner.swift in Sources */,

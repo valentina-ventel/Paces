@@ -1,51 +1,47 @@
-//
-//  MyActivityViewController.swift
-//  Paces
-//
-//  Created by Valentina Vențel on 21/03/2020.
-//  Copyright © 2020 Valentina Vențel. All rights reserved.
-//
 
 import UIKit
 import MapKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class MyActivityViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
-    var activities = [Route]()
     var dict = [Date:[Route]]()
-    
+    var spinner = UIActivityIndicatorView(style: .large)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activities = DBManager.myActivities()
+        showSpinner()
         
-         for activity in activities {
-            print("FROM \(activity.date)")
-            let calendar = Calendar.current
-            let year = calendar.component(.year, from: activity.date)
-            let month = calendar.component(.month, from: activity.date)
-            print("Y \(year), M \(month)")
-          
-            let dateComponents = DateComponents(calendar: calendar,
-                                                year: year,
-                                                month: month,
-                                                day: 1)
+        let databaseReference = Database.database().reference()
+        let completionHandler: ([Date: [Route]]) -> () = { remoteDict in
+            print("Reloading table for \(remoteDict.keys) active days...")
+            self.dict = remoteDict
+            self.tableView.reloadData()
             
-            let firstDay = calendar.date(from: dateComponents)!
-            print("  TO \(firstDay)")
-            if dict[firstDay] == nil  {
-                dict[firstDay] = [activity]
-            } else {
-                dict[firstDay]?.append(activity)
-            }
+            self.spinner.removeFromSuperview()
+            
         }
-        print(dict.keys)
-        tableView.reloadData()
+
+        DBManager.remoteRoutes(databaseReference: databaseReference,
+                               completion: completionHandler)
+    }
+    
+    fileprivate func showSpinner() {
+        //show a spinner
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        view.addSubview(spinner)
+        
+        //center spinner
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
     //MARK: UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return dict.keys.count
+        return dict.keys.count + 1
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -53,30 +49,47 @@ class MyActivityViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let keyDate = Array(dict.keys).sorted{$0 > $1}[section]
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM YYYY"
-        let firstDayString = dateFormatter.string(from: keyDate)
-       
-        return firstDayString
+        if section == 0 {
+            return ""
+        } else {
+            let keyDate = Array(dict.keys).sorted{$0 > $1}[section - 1]
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMMM YYYY"
+            let firstDayString = dateFormatter.string(from: keyDate)
+           
+            return firstDayString
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let key = Array(dict.keys).sorted{$0 > $1}[section]
-        let activitiesForSection = dict[key]
-        return activitiesForSection!.count
+        if section == 0 {
+            return 1
+        } else {
+            let key = Array(dict.keys).sorted{$0 > $1}[section - 1]
+            let activitiesForSection = dict[key]
+            print(section) 
+            return activitiesForSection!.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let key = Array(dict.keys).sorted{$0 > $1}[indexPath.section]
-        let activitiesForSection = dict[key]
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell") as! ProfileTableViewCell
+            return cell
+        } else {
+            
+            let key = Array(dict.keys).sorted{$0 > $1}[indexPath.section - 1]
+            
+            let activitiesForSection = dict[key]
         
-        let route = activitiesForSection![indexPath.row]
+            let route = activitiesForSection![indexPath.row]
+            print("IndexPath = \(indexPath.row)")
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ActivityTableViewCell
-        cell.setup(with: route)
-        return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ActivityTableViewCell
+            cell.setup(with: route)
+            return cell
+        }
     }
 }
 

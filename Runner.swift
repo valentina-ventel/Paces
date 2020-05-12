@@ -10,10 +10,12 @@ import UIKit
 
 struct Runner {
     var username: String
-    var date: Date
+    var email: String
+    var uid: String
     
-    init(username: String, date: Date) {
+    init(username: String, email: String, uid: String) {
         self.username = username
-        self.date = date
+        self.email = email
+        self.uid = uid
     }
 }

@@ -50,6 +50,8 @@ class ActivityViewController: UIViewController, UITabBarControllerDelegate {
         closeButton.isHidden = true
         stopButton.isHidden = false
         startButton.isHidden = true
+        let curentDate = Date()
+        date = curentDate
         start()
     }
     
