@@ -57,4 +57,5 @@ class LoginViewController: UIViewController {
 
 extension Notification.Name {
     static let loginSuccessful = Notification.Name("loginSuccessful")
+    static let dismisModalViewController = Notification.Name("dismisModalViewController")
 }

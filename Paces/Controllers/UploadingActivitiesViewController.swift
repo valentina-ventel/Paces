@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
-class UploadinActivitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UploadingActivitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var routes = [Route]()
     
@@ -20,6 +20,15 @@ class UploadinActivitiesViewController: UIViewController, UITableViewDelegate, U
         routes = DBManager.myActivities()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.post(name: .dismisModalViewController, object: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 64
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -42,5 +51,13 @@ class UploadinActivitiesViewController: UIViewController, UITableViewDelegate, U
         cell.route = routes[indexPath.row]
         cell.completionHandler = completionHandler
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            DBManager.deleteRoute(route: routes[indexPath.row])
+            routes = DBManager.myActivities()
+            tableView.reloadData()
+        }
     }
 }

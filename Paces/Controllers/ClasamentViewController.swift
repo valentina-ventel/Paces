@@ -7,15 +7,31 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
-class ClasamentViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ClasamentViewController: UIViewController,
+                            UITableViewDataSource,
+                            UITableViewDelegate {
     let dict = [Runner]()
     @IBOutlet weak var tableView: UITableView!
+    var clasament = [String: Double]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let databaseReference = Database.database().reference()
+        let completioHandler: ([String: Double]) -> () = { clasamentDictionary in
+            self.clasament = clasamentDictionary
+            self.tableView.reloadData()
+        }
+        
+        DBManager().getClasament(databaseReference, completion: completioHandler)
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 64
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -30,14 +46,16 @@ class ClasamentViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return clasament.keys.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ClasamentTableViewCell
+        let key = Array(clasament.keys)[indexPath.row]
         
-        cell.textLabel?.text = "Hello"
-         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ClasamentTableViewCell
+        cell.distanceLabel.text = FormatterModel().distanceFormatter(distanceInMeters: Measurement(value: clasament[key]!, unit: .meters))
+        cell.nameLabel.text = key
+        cell.rankLabel.text = String(indexPath.row + 1)
         return cell
     }
     

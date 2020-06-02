@@ -211,5 +211,47 @@ class DBManager: NSObject {
             })
         }
     }
+    
+    func getClasament(_ databaseReference: DatabaseReference,
+                      completion: @escaping(([String: Double]) -> ())) {
+        var distance: Double = 0
+        var clasamentDictionary = [String: Double]()
+        
+        databaseReference.child("Users").observeSingleEvent(of: DataEventType.value,
+                                                            with: { (snapshot) in
+            if snapshot.exists() {
+                
+                let users = snapshot.value as! NSDictionary
+                
+                for (key, value) in users {
+                    let uid = key as! String
+                    let userDetails = value as! NSDictionary
+                    let user_uid = Auth.auth().currentUser?.uid
+                    let username = userDetails["username"]  as! String
+                    distance = 0
+                    
+                    if uid == user_uid {
+                        print ("Yas, I am! Olaaaaa!")
+                    }
+                    
+                    let routes = userDetails["routes"] as! NSDictionary
+                    
+                    for (_, value) in routes {
+                        let routesDetails = value as! NSDictionary
+                        let firebaseDistance = routesDetails["distance"] as! Double
+                        
+                        distance += Double(firebaseDistance)
+                    }
+                    print("----------------------")
+                    print(distance)
+                    print(FormatterModel().distanceFormatter(distanceInMeters: Measurement(value: distance, unit: .meters)))
+                    
+                    clasamentDictionary[username] = distance
+                }
+            }
+            completion(clasamentDictionary)
+        })
+    }
 }
+
 

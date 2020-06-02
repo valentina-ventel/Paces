@@ -8,7 +8,7 @@ class MyActivityViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var dict = [Date:[Route]]()
     var spinner = UIActivityIndicatorView(style: .large)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +23,31 @@ class MyActivityViewController: UIViewController, UITableViewDataSource {
             self.spinner.removeFromSuperview()
             
         }
-
+        
+        DBManager.remoteRoutes(databaseReference: databaseReference,
+                               completion: completionHandler)
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadData(notification:)), name: .dismisModalViewController, object: nil)
+        
+    }
+    
+    @objc func reloadData(notification: NSNotification) {
+        showSpinner()
+        
+        let databaseReference = Database.database().reference()
+        let completionHandler: ([Date: [Route]]) -> () = { remoteDict in
+            print("Reloading table for \(remoteDict.keys) active days...")
+            self.dict = remoteDict
+            self.tableView.reloadData()
+            
+            self.spinner.removeFromSuperview()
+            
+        }
+        
         DBManager.remoteRoutes(databaseReference: databaseReference,
                                completion: completionHandler)
     }

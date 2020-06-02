@@ -18,8 +18,6 @@
 		A7145AE7243BA1F80056A292 /* DateOfTheLastActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145AE5243BA1F80056A292 /* DateOfTheLastActivity.swift */; };
 		A7145B0A244200820056A292 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145B09244200820056A292 /* TabBarController.swift */; };
 		A7145B0B244200820056A292 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145B09244200820056A292 /* TabBarController.swift */; };
-		A7145B0D244200D90056A292 /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145B0C244200D90056A292 /* MyTabBar.swift */; };
-		A7145B0E244200D90056A292 /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7145B0C244200D90056A292 /* MyTabBar.swift */; };
 		A72A63B4240EF3D0004C3C2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63B3240EF3D0004C3C2A /* AppDelegate.swift */; };
 		A72A63B6240EF3D0004C3C2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63B5240EF3D0004C3C2A /* SceneDelegate.swift */; };
 		A72A63B8240EF3D0004C3C2A /* MotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A63B7240EF3D0004C3C2A /* MotionViewController.swift */; };
@@ -49,13 +47,12 @@
 		A74549882426BB5000A104F8 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74549872426BB5000A104F8 /* Route.swift */; };
 		A745498F2427D87700A104F8 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745498E2427D87700A104F8 /* ActivityTableViewCell.swift */; };
 		A7454996242A2EB800A104F8 /* FormatterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7454995242A2EB800A104F8 /* FormatterModel.swift */; };
-		A7454998242B823F00A104F8 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7454997242B823F00A104F8 /* SummaryViewController.swift */; };
 		A74A54952451D24200910458 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A54942451D24200910458 /* ProfileTableViewCell.swift */; };
 		A74A549F2454AE2A00910458 /* ClasamentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A549E2454AE2A00910458 /* ClasamentTableViewCell.swift */; };
 		A74A54A124584E0B00910458 /* RLMRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A54A024584E0B00910458 /* RLMRunner.swift */; };
 		A74A54A3245CBDDD00910458 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A54A2245CBDDC00910458 /* LoginViewController.swift */; };
 		A74A54A5245CD0AC00910458 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A74A54A4245CD0AC00910458 /* GoogleService-Info.plist */; };
-		A74A54A7245D041200910458 /* UploadinActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A54A6245D041200910458 /* UploadinActivitiesViewController.swift */; };
+		A74A54A7245D041200910458 /* UploadingActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A54A6245D041200910458 /* UploadingActivitiesViewController.swift */; };
 		A74A54A92464143A00910458 /* UploadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A54A82464143A00910458 /* UploadingTableViewCell.swift */; };
 		A79A5C9C244C46F3006839E5 /* ClasamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A5C9B244C46F3006839E5 /* ClasamentViewController.swift */; };
 		E908DBC32291D7DEB05F57A2 /* Pods_Paces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE97B3AFBBFF0ED6F7CD258 /* Pods_Paces.framework */; };
@@ -91,7 +88,6 @@
 		A7145AE1243A18210056A292 /* Date+Paces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Paces.swift"; sourceTree = "<group>"; };
 		A7145AE5243BA1F80056A292 /* DateOfTheLastActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfTheLastActivity.swift; sourceTree = "<group>"; };
 		A7145B09244200820056A292 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		A7145B0C244200D90056A292 /* MyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
 		A72A63B0240EF3D0004C3C2A /* Paces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72A63B3240EF3D0004C3C2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A72A63B5240EF3D0004C3C2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,13 +123,12 @@
 		A74549872426BB5000A104F8 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		A745498E2427D87700A104F8 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		A7454995242A2EB800A104F8 /* FormatterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterModel.swift; sourceTree = "<group>"; };
-		A7454997242B823F00A104F8 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		A74A54942451D24200910458 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		A74A549E2454AE2A00910458 /* ClasamentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasamentTableViewCell.swift; sourceTree = "<group>"; };
 		A74A54A024584E0B00910458 /* RLMRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLMRunner.swift; sourceTree = "<group>"; };
 		A74A54A2245CBDDC00910458 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A74A54A4245CD0AC00910458 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A74A54A6245D041200910458 /* UploadinActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadinActivitiesViewController.swift; sourceTree = "<group>"; };
+		A74A54A6245D041200910458 /* UploadingActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingActivitiesViewController.swift; sourceTree = "<group>"; };
 		A74A54A82464143A00910458 /* UploadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingTableViewCell.swift; sourceTree = "<group>"; };
 		A79A5C9B244C46F3006839E5 /* ClasamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasamentViewController.swift; sourceTree = "<group>"; };
 		C144E6D2B3D91D20C1B0B691 /* Pods-Paces-PacesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paces-PacesUITests.debug.xcconfig"; path = "Target Support Files/Pods-Paces-PacesUITests/Pods-Paces-PacesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +191,8 @@
 			children = (
 				A7145ADC2438F0390056A292 /* Helpers.swift */,
 				A7145AE1243A18210056A292 /* Date+Paces.swift */,
+				A72A63E7240EFC66004C3C2A /* AccelerometerModelProtocol.swift */,
+				A72A63ED24154270004C3C2A /* HTTPClient.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -261,10 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				A72A63E5240EFBE0004C3C2A /* Accelerometer.swift */,
-				A72A63E7240EFC66004C3C2A /* AccelerometerModelProtocol.swift */,
-				A72A63ED24154270004C3C2A /* HTTPClient.swift */,
 				A74549742423897100A104F8 /* LocationManager.swift */,
-				A74549762423942D00A104F8 /* UIButton+Paces.swift */,
 				A74549872426BB5000A104F8 /* Route.swift */,
 				A72A63EB241540F6004C3C2A /* Runner.swift */,
 				A7454995242A2EB800A104F8 /* FormatterModel.swift */,
@@ -296,6 +290,7 @@
 				A745496E242288A100A104F8 /* ActivityViewController+CLLocationManagerDelegate.swift */,
 				A7454970242289FD00A104F8 /* ActivityViewController+MKMapViewDelegate.swift */,
 				A7145ADE2438FBC50056A292 /* MKMapView.swift */,
+				A74549762423942D00A104F8 /* UIButton+Paces.swift */,
 			);
 			name = Extensions;
 			path = ..;
@@ -308,12 +303,11 @@
 				A745498124267E2000A104F8 /* MyActivityViewController.swift */,
 				A72A64392416A281004C3C2A /* ActivityViewController.swift */,
 				A72A63B7240EF3D0004C3C2A /* MotionViewController.swift */,
-				A7454997242B823F00A104F8 /* SummaryViewController.swift */,
 				A7145B09244200820056A292 /* TabBarController.swift */,
-				A72A6453241B8D6D004C3C2A /* Extensions */,
 				A79A5C9B244C46F3006839E5 /* ClasamentViewController.swift */,
 				A74A54A2245CBDDC00910458 /* LoginViewController.swift */,
-				A74A54A6245D041200910458 /* UploadinActivitiesViewController.swift */,
+				A74A54A6245D041200910458 /* UploadingActivitiesViewController.swift */,
+				A72A6453241B8D6D004C3C2A /* Extensions */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -325,7 +319,6 @@
 				A745497B24251EF200A104F8 /* RLMRoute.swift */,
 				A7145AE5243BA1F80056A292 /* DateOfTheLastActivity.swift */,
 				A745497F24266C4600A104F8 /* DBManager.swift */,
-				A7145B0C244200D90056A292 /* MyTabBar.swift */,
 				A74A54A024584E0B00910458 /* RLMRunner.swift */,
 			);
 			path = "Realm Models";
@@ -574,12 +567,10 @@
 				A7145AE2243A18210056A292 /* Date+Paces.swift in Sources */,
 				A74549772423942D00A104F8 /* UIButton+Paces.swift in Sources */,
 				A745496F242288A100A104F8 /* ActivityViewController+CLLocationManagerDelegate.swift in Sources */,
-				A7145B0D244200D90056A292 /* MyTabBar.swift in Sources */,
 				A7454971242289FD00A104F8 /* ActivityViewController+MKMapViewDelegate.swift in Sources */,
 				A745497A24251CF100A104F8 /* RLMLocationCoordinate.swift in Sources */,
 				A745498224267E2000A104F8 /* MyActivityViewController.swift in Sources */,
 				A745498024266C4600A104F8 /* DBManager.swift in Sources */,
-				A7454998242B823F00A104F8 /* SummaryViewController.swift in Sources */,
 				A72A63B8240EF3D0004C3C2A /* MotionViewController.swift in Sources */,
 				A74A54952451D24200910458 /* ProfileTableViewCell.swift in Sources */,
 				A74A549F2454AE2A00910458 /* ClasamentTableViewCell.swift in Sources */,
@@ -598,7 +589,7 @@
 				A7145ADF2438FBC50056A292 /* MKMapView.swift in Sources */,
 				A745498F2427D87700A104F8 /* ActivityTableViewCell.swift in Sources */,
 				A74A54A3245CBDDD00910458 /* LoginViewController.swift in Sources */,
-				A74A54A7245D041200910458 /* UploadinActivitiesViewController.swift in Sources */,
+				A74A54A7245D041200910458 /* UploadingActivitiesViewController.swift in Sources */,
 				A7145B0A244200820056A292 /* TabBarController.swift in Sources */,
 				A74549882426BB5000A104F8 /* Route.swift in Sources */,
 				A72A63B6240EF3D0004C3C2A /* SceneDelegate.swift in Sources */,
@@ -618,7 +609,6 @@
 				A7145AE3243A18210056A292 /* Date+Paces.swift in Sources */,
 				A7145AE7243BA1F80056A292 /* DateOfTheLastActivity.swift in Sources */,
 				A72A63CB240EF3D3004C3C2A /* PacesTests.swift in Sources */,
-				A7145B0E244200D90056A292 /* MyTabBar.swift in Sources */,
 				A7145B0B244200820056A292 /* TabBarController.swift in Sources */,
 				A745498324267E2000A104F8 /* MyActivityViewController.swift in Sources */,
 				A7145AE4243A18E10056A292 /* Helpers.swift in Sources */,
